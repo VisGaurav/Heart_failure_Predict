@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Heart Failure Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+    
+            <h2 class='container-heading'><span class="heading_font">Heart Failure Predictor</span></h2>
+    
+        <div class='description'>
+            <p>A Machine Learning Web App, Built with Flask.</p>
+        </div>
+
+    </div>
+
+    <div>
+        {% if prediction_text == "Contact a nearby Heart Doctor Immediately!" %}
+        <h1><u>Prediction</u>: <span style="color: red;">{{ prediction_text }}</span></h1>
+        {% elif prediction_text == "You are safe!" %}
+        <h1><u>Prediction</u>: <span style="color: green;">{{ prediction_text }}</span></h1>
+        {% else %}
+        <h1><u>Prediction</u>: {{ prediction_text }}</h1>
+        {% endif %}
+    </div>
+
+
+    <div class='footer'>
+        <div class="contact">
+            <a target="_blank" href="https://github.com/AbhishekSrivastava2701"><i class="git"></i></a>
+        </div>
+        <img src="{{ url_for('static', filename='GitHub-Mark-ea2971cee799.png') }}" alt="GitHub" height="30" width="30" style="border-radius: 80px;">
+        <p><span style="color: red;">&copy;</span> Heart Failure Predictor</p>
+    </div>
+</body>
+
+</html>
